@@ -1,0 +1,42 @@
+
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://visit.gent.be/sites/default/files/styles/index_mobile/public/media/img/2022-01/VisitReeks133-DT012846.jpg?h=8e0fe7db&itok=hK-iRAMs);">
+  <div class="container">
+    <h1>Movies To Watch</h1>
+    <p>keep track of all the movies you planned to watch!.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      Your Lists
+    </div>
+
+    <div class="d-grid gap-2 col-6 mx-auto">
+      <%= link_to "Add a New List", new_list_path, class: "btn btn-outline-primary button" %>
+    </div>
+</div>
+
+<div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <% @lists.each do |list| %>
+            <div class="col">
+              <div class="card shadow-sm">
+              <img class="card-img-top" src="<%=list.image_url%>"  width="100%" height="225" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <div class="card-body">
+                  <p class="card-text"><%= list.name %>.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <div><%= link_to "View", list_path(list), class: "btn btn-sm btn-outline-secondary"%></div>
+                      <div><%= link_to "Delete", list_path(list), class: "btn btn-sm btn-outline-secondary",data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+      </div>
+    </div>
+</div>

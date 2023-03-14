@@ -1,0 +1,26 @@
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://visit.gent.be/sites/default/files/styles/index_mobile/public/media/img/2022-01/VisitReeks133-DT012846.jpg?h=8e0fe7db&itok=hK-iRAMs);">
+  <div class="container">
+    <h1>Movies To Watch</h1>
+    <p>keep track of all the movies you planned to watch!.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      Add Your List
+    </div>
+  </div>
+
+  <p> </p>
+
+  <div class="d-grid gap-2 col-6 mx-auto">
+    <%= simple_form_for(@list) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :image_url %>
+      <%= f.submit class: "btn btn-success"%>
+    <% end %>
+  </div>
+
+</div>

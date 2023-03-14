@@ -1,0 +1,19 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @list.image_url %>);">
+  <div class="container">
+    <h1> <%= @list.name.capitalize %></h1>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-body">
+    Your Movies
+    <% @movies.each do |movie| %>
+      <p> <%= movie.title %></p>
+    <% end %>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <%= link_to "Add a New Movie",   new_list_movie_path(@list), class: "btn btn-outline-primary button" %>
+    </div>
+  </div>
+
+</div>
