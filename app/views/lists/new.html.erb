@@ -18,7 +18,7 @@
   <div class="d-grid gap-2 col-6 mx-auto">
     <%= simple_form_for(@list) do |f| %>
       <%= f.input :name %>
-      <%= f.input :image_url %>
+      <%= f.input :image, as: :file %>
       <%= f.submit class: "btn btn-success"%>
     <% end %>
   </div>

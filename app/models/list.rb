@@ -1,4 +1,4 @@
 class List < ApplicationRecord
   validates  :name, presence: true
-  validates  :image_url, presence: true
+  has_one_attached :image
 end
