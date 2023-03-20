@@ -1,0 +1,17 @@
+<div>
+  <h1> <strong>Please Select a Movie to Add</strong> <h1>
+</div>
+
+
+<div>
+  <ul class="list-group list-group-flush">
+      <% @movies.each do |movie| %>
+        <li class="list-group-item">
+          <%= movie.title %>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <%= link_to "Add to List", list_movie_path(movie), class: "btn btn-sm btn-success" %>
+          </div>
+        </li>
+      <% end %>
+  </ul>
+</div>
