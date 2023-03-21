@@ -9,7 +9,7 @@
         <li class="list-group-item">
           <%= movie.title %>
           <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <%= link_to "Add to List", list_movie_path(movie), class: "btn btn-sm btn-success" %>
+            <%= link_to "Add to List", new_list_movie_bookmark_path(movie), class: "btn btn-sm btn-success" %>
           </div>
         </li>
       <% end %>
